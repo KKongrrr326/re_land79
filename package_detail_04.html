@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: Land79 ::</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 외부 js -->
+    <script src="js/main.js"></script>
+    <script>
+
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+        jQuery(document).ready(function ($) {
+            // PC
+            if (!isMobile) {
+
+                $(function(){
+                    $("aside .pk-mu").click(function(){
+                        $("aside .pk-dep").slideToggle(300);
+                    });
+                });
+
+            }
+        });
+        jQuery(document).ready(function ($) {
+            // Mobile
+            if (isMobile) {
+
+                $(function () {
+
+                    $("header .m-menu").on("click", function () {
+                        $("#m-open-menu").show();
+                    });
+                    $("#m-open-menu .head button").on("click", function () {
+                        $("#m-open-menu").hide();
+                    });
+
+                    $("#m-open-menu .menu-list .depth1>li>a").on("click", function () {
+
+                        $(this).next().slideToggle(300);
+                        $(this).toggleClass("on");
+                    });
+
+                });
+
+                // header : fixed 
+                var fixed_head = 55;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_head <= window) {
+                        $("header").addClass("fixed");
+                    } else {
+                        $("header").removeClass("fixed");
+                    }
+                });
+                var fixed_navi = 102;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_navi <= window) {
+                        $("nav").addClass("fixed");
+                    } else {
+                        $("nav").removeClass("fixed");
+                    }
+                });
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="m-open-menu">
+            <div class="inner-wrap">
+                <div class="head">
+                    <a class="logo" href="index.html"><img src="img/open_menu_logo.png" alt=""></a>
+                    <button><img src="img/hide_menu.png" alt=""></button>
+                </div> <!-- end head -->
+                <div class="user-btn">
+                    <input type="button" value="로그인">
+                    <input type="button" value="회원가입">
+                </div> <!-- end user-btn -->
+                <div class="menu-list">
+                    <ul class="depth1">
+                        <li><a href="#">학원소개</a>
+                            <ul class="depth2">
+                                <li><a href="">학원소개</a></li>
+                                <li><a href="">수업시간표</a></li>
+                                <li><a href="">시험정보</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">온라인강의</a></li>
+                        <li><a href="#">온라인종합반</a></li>
+                        <li><a href="#">교수소개</a>
+                            <ul class="depth2">
+                                <li><a href="#">공인중개사</a></li>
+                                <li><a href="#">주택관리사</a></li>
+                                <li><a href="#">부동산경매</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">강의교재</a></li>
+                        <li><a href="#">커뮤니티</a>
+                            <ul class="depth2">
+                                <li><a href="#">합격수기</a></li>
+                                <li><a href="#">기출/모의고사</a></li>
+                                <li><a href="#">학습자료실</a></li>
+                                <li><a href="#">학습프로그램</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">고객센터</a>
+                            <ul class="depth2">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">온라인문의</a></li>
+                                <li><a href="#">자주묻는질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end inner-wrap -->
+        </div> <!-- end m-open-menu -->
+        <header>
+            <div class="container">
+                <div class="head-banner">
+                    <img src="img/head_banner.png" alt="">
+                </div>
+                <a class="logo" href="index.html"><img src="img/logo.png" alt=""></a>
+                <ul class="user-menu font-0">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li class="my-class"><a href="#">나의 강의실</a></li>
+                </ul> <!-- end user-menu -->
+                <button class="m-menu bg-img"></button>
+                <a class="sign-link bg-img" href="#"></a>
+            </div>
+        </header>
+        <nav>
+            <ul class="container">
+                <li><a href="#">학원소개</a></li>
+                <li><a href="#">온라인강의</a></li>
+                <li class="on"><a href="#">온라인종합반</a></li>
+                <li><a href="#">교수소개</a></li>
+                <li><a href="#">강의교재</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </nav>
+
+        <div id="pk-detail" class="pk-4">
+                <div class="pk-main">
+                    <div class="wrap-bg">
+                        <div class="wrap-gradient">
+                        
+                            <img class="main-img" src="img/package_visaul_04.png" alt="">
+                            <div class="visual-txt">
+                                <h1>인생의 주인공은 바로 너 !<br>
+                                    합격은 누구든 어디에서나 가능합니다.
+                                </h1>
+                            </div> <!-- end visual-txt -->
+                            <div class="gift-area">
+                                <div class="dt-gift container">
+                                    <div class="gift-box">
+                                        <p class="num">01</p>
+                                        <div class="gift-img"><img src="img/dt4_gift_img1.png" alt=""></div>
+                                        <div class="txt-box">
+                                            <p>2021년 1차 과목 최신 강의<br><span>무제한 수강</span></p>
+                                        </div>
+                                    </div> <!-- end gift-box -->
+                                    <div class="gift-box">
+                                        <p class="num">02</p>
+                                        <div class="gift-img"><img src="img/dt_gift_img2.png" alt=""></div>
+                                        <div class="txt-box">
+                                            <p>강의 수강에 필요한<br><span>최신 교재 지급</span></p>
+                                        </div>
+                                    </div> <!-- end gift-box -->
+                                    <div class="gift-box">
+                                        <p class="num">03</p>
+                                        <div class="gift-img"><img src="img/dt_gift_img3.png" alt=""></div>
+                                        <div class="txt-box">
+                                            <p>PC & 모바일 & 테블릿<br><span>언제 어디서나 무료 수강</span></p>
+                                        </div>
+                                    </div> <!-- end gift-box -->
+                                </div> <!-- end dt-gift -->
+                            </div> <!-- end gift-area -->
+                        </div> <!-- end wrap-gradient -->
+                    </div> <!-- end wrap-bg -->
+                </div> <!-- end pk-main -->
+                <section id="part-1" class="service-pt package-ct">
+                    <div class="container">
+                        <h1>Land79 <p>를 선택해야 하는 이유!</p>
+                        </h1>
+                        <div class="part-ct">
+                            <div class="tit">
+                                <p>Part1.</p>
+                                <h2><span>바쁜 하루를 보내고 계시는 분들께 추천하는<br></span>32회 1차 합격반</h2>
+                            </div> <!-- end tit -->
+                            <div class="ct-area">
+                                <div class="class-type">
+                                    <div class="class-name">
+                                        <p>평생<br>수강반</p>
+                                    </div> <!-- end class-name -->
+                                    <div class="class-info">
+                                        <ul>
+                                            <li>
+                                                <p>합격할 때까지 평생 수강</p>
+                                            </li>
+                                            <li>
+                                                <p>합격에 필요한 전과목 최신 교재 제공</p>
+                                            </li>
+                                            <li>
+                                                <p>32회 수험증 사본 제출 시</p>
+                                            </li>
+                                        </ul>
+                                        <div class="class-price">
+                                            <div class="pr-info">
+                                                <p class="before-pr">889,000</p>
+                                                <p class="sale-pr">499,000</p>
+                                            </div>
+                                            <div class="user-btn">
+                                                <input class="detail-btn" type="button" value="자세히 보기">
+                                                <input class="buy-btn" type="button" value="수강신청 GO">
+                                            </div> <!-- end user-btn -->
+                                        </div> <!-- end class-price -->
+                                    </div> <!-- class-info -->
+                                </div> <!-- end class-type -->
+                                <div class="class-type">
+                                    <div class="class-name">
+                                        <p>2021<br>수강<br>연장반</p>
+                                    </div> <!-- end class-name -->
+                                    <div class="class-info">
+                                        <ul>
+                                            <li>
+                                                <p>합격에 필요한 전과목 최신 교재 제공</p>
+                                            </li>
+                                            <li>
+                                                <p>32회 수험증 사본 제출 시 1년 기간 연장</p>
+                                            </li>
+                                        </ul>
+                                        <div class="class-price">
+                                            <div class="pr-info">
+                                                <p class="before-pr">889,000</p>
+                                                <p class="sale-pr">459,000</p>
+                                            </div>
+                                            <div class="user-btn">
+                                                <input class="detail-btn" type="button" value="자세히 보기">
+                                                <input class="buy-btn" type="button" value="수강신청 GO">
+                                            </div> <!-- end user-btn -->
+                                        </div> <!-- end class-price -->
+                                    </div> <!-- class-info -->
+                                </div> <!-- end class-type -->
+                                <div class="class-type">
+                                    <div class="class-name">
+                                        <p>2021<br>수강반</p>
+                                    </div> <!-- end class-name -->
+                                    <div class="class-info">
+                                        <ul>
+                                            <li>
+                                                <p>합격에 필요한 전과목 최신 교재 제공</p>
+                                            </li>
+                                            <li>
+                                                <p>32회 시험 전까지 수강</p>
+                                            </li>
+                                        </ul>
+                                        <div class="class-price">
+                                            <div class="pr-info">
+                                                <p class="before-pr">689,000</p>
+                                                <p class="sale-pr">399,000</p>
+                                            </div>
+                                            <div class="user-btn">
+                                                <input class="detail-btn" type="button" value="자세히 보기">
+                                                <input class="buy-btn" type="button" value="수강신청 GO">
+                                            </div> <!-- end user-btn -->
+                                        </div> <!-- end class-price -->
+                                    </div> <!-- class-info -->
+                                </div> <!-- end class-type -->
+                            </div> <!-- end ct-area -->
+                            <div class="m-ct-area">
+                                <div class="m-class-type">
+                                    <div class="head font-0">
+                                        <p>평생 수강반</p>
+                                        <ul class="class-price">
+                                            <li class="cost-pr">689,000</li>
+                                            <li class="sale-pr">489,000</li>
+                                        </ul>
+                                    </div> <!-- end head -->
+                                    <ul class="class-info">
+                                        <li>합격할 때까지 평생 수강</li>
+                                        <li>합격에 필요한 전과목 최신 교재 제공</li>
+                                        <li>32회 수험증 사본 제출 시</li>
+                                    </ul> <!-- end class-info -->
+                                    <div class="user-btn">
+                                        <input class="detail-btn" type="button" value="자세히 보기">
+                                        <input class="buy-btn" type="button" value="수강신청 GO">
+                                    </div>
+                                </div> <!-- end m-class-type -->
+                                <div class="m-class-type">
+                                    <div class="head font-0">
+                                        <p>2021 수강 연장반</p>
+                                        <ul class="class-price">
+                                            <li class="cost-pr">889,000</li>
+                                            <li class="sale-pr">459,000</li>
+                                        </ul>
+                                    </div> <!-- end head -->
+                                    <ul class="class-info">
+                                        <li>합격에 필요한 전과목 최신 교재 제공</li>
+                                        <li>32회 수험증 사본 제출 시 1년 기간 연장</li>
+                                    </ul> <!-- end class-info -->
+                                    <div class="user-btn">
+                                        <input class="detail-btn" type="button" value="자세히 보기">
+                                        <input class="buy-btn" type="button" value="수강신청 GO">
+                                    </div>
+                                </div> <!-- end m-class-type -->
+                                <div class="m-class-type">
+                                    <div class="head font-0">
+                                        <p>2021 수강반</p>
+                                        <ul class="class-price">
+                                            <li class="cost-pr">689,000</li>
+                                            <li class="sale-pr">399,000</li>
+                                        </ul>
+                                    </div> <!-- end head -->
+                                    <ul class="class-info">
+                                        <li>합격에 필요한 전과목 최신 교재 제공</li>
+                                        <li>32회 시험 전까지 수강 가능</li>
+                                    </ul> <!-- end class-info -->
+                                    <div class="user-btn">
+                                        <input class="detail-btn" type="button" value="자세히 보기">
+                                        <input class="buy-btn" type="button" value="수강신청 GO">
+                                    </div>
+                                </div> <!-- end m-class-type -->
+                            </div> <!-- end m-sale-class -->
+                        </div> <!-- end part-ct -->
+                    </div>
+                </section>
+                <section id="part-5" class="service-pt package-ct">
+                    <div class="part-ct container">
+                        <div class="tit">
+                            <p>Part2.</p>
+                            <h2><span>최신 개정을 모두 반영한</span><br>2021년 공인중개사 기본서 1차 세트 교재 제공!</h2>
+                        </div> <!-- end tit -->
+                        <div class="pk-dt-book">
+                            <img src="img/pk_dt_book_1st.png" alt="">
+                        </div> <!-- end pk-dt-book -->
+                    </div> <!-- end part-ct -->
+                </section> <!-- end part-5 -->
+                <section id="part-4" class="service-pt">
+                    <div class="part-ct container">
+                        <div class="tit">
+                            <p>Part3.</p>
+                            <h2><span>Land79만의 소신으로 연구한</span><br>" 완벽한 커리큘럼 "</h2>
+                        </div> <!-- end tit -->
+                        <div class="curriculum ct-area">
+                            <img src="img/curriculum_ct.png" alt="">
+                        </div> <!-- end ct-area -->
+                    </div> <!-- end part-ct -->
+                </section> <!-- end part-4 -->
+                <section id="part-2" class="service-pt">
+                    <div class="part-ct container">
+                        <div class="tit">
+                            <p>Part4.</p>
+                            <h2><span>수강생 분들의 처음과 끝에 버팀목과 길잡이가 되어줄</span><br>Land79의 자랑스러운 강사진 !</h2>
+                        </div> <!-- end tit -->
+                        <div class="ct-area">
+                            <p class="sub-txt">다양한 연령대의 수강생 분들을 합격의 길로 안내할 수 있도록 land79 강사진 분들은 오늘도 최선을 다하고 있습니다.</p>
+                            <div class="pass-img bg-img">
+                                <img class="ct-bg" src="img/all_pass.png" alt="">
+                                <img class="m-ct-bg" src="img/m_all_pass.png" alt="">
+                            </div><!-- end pass-img -->
+                        </div> <!-- end ct-area -->
+                    </div> <!-- end part-ct -->
+                </section> <!-- end part-2 -->
+                <section id="part-3" class="service-pt">
+                    <div class="part-ct container">
+                        <div class="tit">
+                            <p>Part5.</p>
+                            <h2><span>합격이라는 도착지에서 건내 준</span><br>합격자 수강생의 생생후기와 스터디 팁 대방출 !</h2>
+                        </div> <!-- end tit -->
+                        <div class="ct-area review-list">
+                            <div class="review-box">
+                                <div class="head">
+                                    <div class="thead">
+                                        <p>제 30회 공인중개사 합격자</p>
+                                        <span>설레는 마음으로 학원 생활을 시작하고, 좋은 결실을 맺게 되어 합격후기를 올립니다.</span>
+                                    </div> <!-- end thead -->
+                                    <p class="writer">문성진 학생</p>
+                                </div> <!-- end head -->
+                                <div class="review-ct">
+                                    <div class="txt-box">
+                                        <p>교수님들의 열정적인 가르침 다시 한번 감사 드립니다.</p>
+                                        <p>민법-정동섭 교수님의 빈틈없고 폭넓은강의로 감동받고</p>
+                                        <p>학개론 교수님의 알기쉬운방법과 반복학습강의로 감사했습니다.</p>
+                                        <p>공인중개사법 교수님의 암기사항 프린터물을 코팅 해서 닳도록 보았습니다</p>
+                                        <p>공법 교수님의 스토리텔링 암기법과 단월별 요점정리로 점수를 높일수 있었고</p>
+                                        <p>공시법 교수님의 알쏭을 매일이다시피 들었고 등기법 프린터물도 자주 보면서 암기했고</p>
+                                        <p>세법 교수님의 집중력있는 강의와 어려운 세법을 쉽게 풀이해주셔서 감사했습니다</p>
+                                    </div>
+                                </div> <!-- end review-ct -->
+                            </div> <!-- end review-box -->
+                            <div class="review-box">
+                                <div class="head">
+                                    <div class="thead">
+                                        <p>제 30회 공인중개사 합격자</p>
+                                        <span>설레는 마음으로 학원 생활을 시작하고, 좋은 결실을 맺게 되어 합격후기를 올립니다.</span>
+                                    </div> <!-- end thead -->
+                                    <p class="writer">문성진 학생</p>
+                                </div> <!-- end head -->
+                                <div class="review-ct">
+                                    <div class="txt-box">
+                                        <p>교수님들의 열정적인 가르침 다시 한번 감사 드립니다.</p>
+                                        <p>민법-정동섭 교수님의 빈틈없고 폭넓은강의로 감동받고</p>
+                                        <p>학개론 교수님의 알기쉬운방법과 반복학습강의로 감사했습니다.</p>
+                                        <p>공인중개사법 교수님의 암기사항 프린터물을 코팅 해서 닳도록 보았습니다</p>
+                                        <p>공법 교수님의 스토리텔링 암기법과 단월별 요점정리로 점수를 높일수 있었고</p>
+                                        <p>공시법 교수님의 알쏭을 매일이다시피 들었고 등기법 프린터물도 자주 보면서 암기했고</p>
+                                        <p>세법 교수님의 집중력있는 강의와 어려운 세법을 쉽게 풀이해주셔서 감사했습니다</p>
+                                    </div>
+                                </div> <!-- end review-ct -->
+                            </div> <!-- end review-box -->
+                            <div class="review-box">
+                                <div class="head">
+                                    <div class="thead">
+                                        <p>제 30회 공인중개사 합격자</p>
+                                        <span>설레는 마음으로 학원 생활을 시작하고, 좋은 결실을 맺게 되어 합격후기를 올립니다.</span>
+                                    </div> <!-- end thead -->
+                                    <p class="writer">문성진 학생</p>
+                                </div> <!-- end head -->
+                                <div class="review-ct">
+                                    <div class="txt-box">
+                                        <p>교수님들의 열정적인 가르침 다시 한번 감사 드립니다.</p>
+                                        <p>민법-정동섭 교수님의 빈틈없고 폭넓은강의로 감동받고</p>
+                                        <p>학개론 교수님의 알기쉬운방법과 반복학습강의로 감사했습니다.</p>
+                                        <p>공인중개사법 교수님의 암기사항 프린터물을 코팅 해서 닳도록 보았습니다</p>
+                                        <p>공법 교수님의 스토리텔링 암기법과 단월별 요점정리로 점수를 높일수 있었고</p>
+                                        <p>공시법 교수님의 알쏭을 매일이다시피 들었고 등기법 프린터물도 자주 보면서 암기했고</p>
+                                        <p>세법 교수님의 집중력있는 강의와 어려운 세법을 쉽게 풀이해주셔서 감사했습니다</p>
+                                    </div>
+                                </div> <!-- end review-ct -->
+                            </div> <!-- end review-box -->
+                            <div class="more-btn align-center">
+                                <a href="#">합격자의 생생후기 전체보기</a>
+                            </div>
+                        </div> <!-- end ct-area -->
+                    </div> <!-- end part-ct -->
+                </section>
+                <section id="event-part" class="service-pt">
+                    <div class="part-ct container">
+                        <div class="tit">
+                            <p>Event-Part</p>
+                            <h2><span>패키지 상품 구입 시</span><br>스타벅스 아메리카노 증정 !</h2>
+                        </div> <!-- end tit -->
+                        <div class="event-area">
+                            <div class="event-item">
+                                <img src="img/event_gift_img.png" alt="">
+                            </div> <!-- end event-img-->
+                            <div class="event-info">
+                                <p>* 패키지 상품 구입 후 인증 글을 남기시면 스타벅스 아메리카노 쿠폰을 드립니다.</p>
+                                <a href="#">인증하고 이벤트 상품 받기</a>
+                            </div> <!-- end event-info -->
+                        </div> <!-- end event-area -->
+                    </div> <!-- end container -->
+                </section> <!-- end even-part -->
+                <section id="product" class="container">
+                    <div class="payment-head">
+                        <h1 class="p-name">32회 1차 합격반</h1>
+                        <div class="btn-area">
+                            <div class="price">
+                                <p>269,000</p>
+                            </div> <!-- end price -->
+                            <a class="appy-btn" href="#">수강신청 GO</a>
+                        </div> <!-- end btn-area -->
+                    </div> <!-- end payment-head -->
+                    <table>
+                        <colgroup>
+                        <col width="16%">
+                        <col width="84%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>수강기간</th>
+                                <td>
+                                    <p class="important">- 2021년 32회 시험일까지</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>수강과목</th>
+                                <td>
+                                    <p>- 1차 : 부동산학개론, 민법 및 민사특별법</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>강좌구성</th>
+                                <td>
+                                    <p>기초입문(1차) + 기본이론 + 심화이론 + 요약과정 + 핵심요약</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>수강교재</th>
+                                <td>
+                                    <p>1) 유의사항</p>
+                                    <ul>
+                                        <li>- 배송은 32회 1차 합격반 신청 시 기입하는 배송지 주소를 기준으로 발송하니 주소를 정확하게 기입해주시기 바랍니다.</li>
+                                        <li>- 주소 기재 오류로 인한 배송 오류는 당사에서 책임지지 않으며 재발송 되지 않습니다.</li>
+                                        <li>- 상품을 환불할 경우에는 제공받은 교재비 및 제반 수수료를 제외하고 환불되니 참고하시기 바랍니다.</li>
+                                    </ul>
+                                    <p>2) 제공 교재 : 총 4권</p>
+                                    <ul>
+                                        <li class="important">- 2021년 기본서 2권 + 핵심요약집 2권</li>
+                                    </ul>
+                                    <p> * 교재는 출간 일정에 따라 순차배송 될 예정입니다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>환불규정</th>
+                                <td>
+                                    <p>1) 결제 후 7일 이내 환불요청 시 전액 환불됩니다.<br>
+                                        ( 단, 샘플 강의를 제외한 2강 이상 수강 시에는 전액 환불이 불가합니다. )
+                                    </p>
+                                    <p>2) 스마트폰이나 태블릿 pc 강의를 다운로드 한 경우, 수강여부와 상관없이 수강한 것으로 간주하여 전액환불이 불가하오니 수강 시 참고하여서 이용 부탁드립니다.</p>
+                                    <p>3) 본 강의를 3강 이상 수강한 경우에는 이용약관에 따른 부분 절차로 진행되오니 이 점 유의바랍니다.</p>
+                                    <p>4) 환불 시에는 제공받은 교재비 및 제반 수수료를 제외하고 환불되니 참고하시기 바랍니다.</p>
+                                    <p>5) 본 상품은 큰 할인혜택을 드리는 상품으로 이외 부분 환불은 이루어지지 않으니, 구매 시 참고부탁드립니다.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="m-product-info">
+                        <div class="cm-box">
+                            <p class="cm-tit">수강기간</p>
+                            <div class="cm-txt">
+                                <p class="important">- 2021년 32회 시험일까지</p>
+                            </div> <!-- end cm-txt -->
+                        </div> <!-- end cm-box -->
+                        <div class="cm-box">
+                            <p class="cm-tit">수강과목</p>
+                            <div class="cm-txt">
+                                <p>- 1차 : 부동산학개론, 민법 및 민사특별법</p>
+                            </div> <!-- end cm-txt -->
+                        </div> <!-- end cm-box -->
+                        <div class="cm-box">
+                            <p class="cm-tit">강좌구성</p>
+                            <div class="cm-txt">
+                                <p>- 기초입문(1차) + 기본이론 + 심화이론 + 요약과정 + 핵심요약</p>
+                            </div> <!-- end cm-txt -->
+                        </div> <!-- end cm-box -->
+                        <div class="cm-box">
+                            <p class="cm-tit">수강교재</p>
+                            <div class="cm-txt">
+                                <p>1) 유의사항</p>
+                                <ul>
+                                    <li>- 배송은 32회 1차 합격반 신청 시 가입하는 배송지 주소를 기준으로 발송하니 주소를 정확하게 기입해주시기 바랍니다.</li>
+                                    <li>- 주소 기재 오류로 인한 배송 오류는 당사에서 책임지지 않으며 재발송 되지 않습니다.</li>
+                                    <li>- 평생회원 상품을 환불할 경우에는 제공받은 교재비 및 제반 수수료를 제외하고 환불되니 참고하시기 바랍니다.</li>
+                                </ul>
+                                <p>2) 제공 교재 : 총 4권</p>
+                                <ul>
+                                    <li class="important">- 2021년 기본서 2권 + 핵심요약집 2권</li>
+                                </ul>
+                                <p>* 교재는 출간 일정에 따라 순차배송 될 예정입니다.</p>
+                            </div> <!-- end cm-txt -->
+                        </div> <!-- end cm-box -->
+                        <div class="cm-box">
+                            <p class="cm-tit">환불규정</p>
+                            <div class="cm-txt">
+                                <p>1) 결제후 7일 이내 환불요청 시 전액 환불됩니다.<br>
+                                    ( 단, 샘플 강의를 제외한 2강 이상 수강 시에는 전액 환불이 불가 합니다.)
+                                </p>
+                                <p>2) 스마트폰이나 태블릿 PC 강의를 다운로드 한 경우, 수강여부와 상관없이 수강한 것으로 간주하여 전액화불이 불가하오니 수강 시 참고하여서 이용 부탁드립니다.</p>
+                                <p>3) 본 강의를 3강 이상 수강한 경우에는 이용약관에 따른 부분 절차로 진행되오니 이 점 유의바랍니다.</p>
+                                <p>4) 환불 시에는 제공받은 교재비 및 제반 수수료를 제외하고 환불되니 참고하시기 바랍니다.</p>
+                                <p>5) 본 상품은 큰 할인혜택을 드리는 상품으로 이외 부분 환불은 이루어지지 않으니, 구매 시 참고부탁드립니다.</p>
+                            </div> <!-- end cm-txt -->
+                        </div> <!-- end cm-box -->
+                    </div> <!-- end m-product-info -->
+                </section> <!-- end product -->
+                <div class="fixed-apply-btn">
+                   <div class="container">
+                    <a href="#">수강신청</a>
+                   </div> <!-- end container -->
+                </div> <!-- end fixed-apply-btn -->
+        </div> <!-- end pk-detail -->
+
+        <footer>
+            <div class="head">
+                <div class="container">
+                    <ul class="f-nav">
+                        <li><a href="#">학원소개</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div> <!-- end head -->
+            <div class="container">
+                <p class="f-info">LAND79 대표이사: 황민희 <span class="bar">|</span>전화 : 02-867-8118 <span class="bar">|</span> 팩스
+                    : 02-867-8117<span class="bar">|</span>사업자등록번호 : 401-81-58970<span class="bar">|</span>주소: 경기도 하남시 덕풍동로
+                    111-33-007호<span class="bar">|</span>강서공인중개사학원 대표이사 : 윤호상<span class="bar">|</span>전화 :
+                    02-2690-8383<span class="bar">|</span>팩스 : 02-2690-8339<span class="bar">|</span>사업자등록번호 : 375-81-00301
+                </p>
+                <span class="copyright">COPYRIGHT &copy; 2020 LAND79 ALL RIGHTS RESEVED.</span>
+            </div>
+        </footer>
+    </div> <!-- end wrap -->
+</body>
+
+</html>

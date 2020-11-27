@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: Land79 ::</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 외부 js -->
+    <script src="js/main.js"></script>
+    <script>
+
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+        jQuery(document).ready(function ($) {
+            // PC
+            if (!isMobile) {
+
+                $(function () {
+                    $("aside .depth1").click(function () {
+                        $(this).toggleClass("border")
+                        $("aside .slide-mu").toggleClass("on");
+                    });
+                    $("aside .menu-nm").click(function () {
+                        $(this).next().slideToggle(300);
+                    });
+                });
+
+            }
+        });
+        jQuery(document).ready(function ($) {
+            // Mobile
+            if (isMobile) {
+
+                $(function () {
+
+                    $("header .m-menu").on("click", function () {
+                        $("#m-open-menu").show();
+                    });
+                    $("#m-open-menu .head button").on("click", function () {
+                        $("#m-open-menu").hide();
+                    });
+
+                    $("#m-open-menu .menu-list .depth1>li>a").on("click", function () {
+
+                        $(this).next().slideToggle(300);
+                        $(this).toggleClass("on");
+                    });
+
+                });
+
+                // header : fixed 
+                var fixed_head = 55;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_head <= window) {
+                        $("header").addClass("fixed");
+                    } else {
+                        $("header").removeClass("fixed");
+                    }
+                });
+                var fixed_navi = 102;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_navi <= window) {
+                        $("nav").addClass("fixed");
+                    } else {
+                        $("nav").removeClass("fixed");
+                    }
+                });
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="m-open-menu">
+            <div class="inner-wrap">
+                <div class="head">
+                    <a class="logo" href="index.html"><img src="img/open_menu_logo.png" alt=""></a>
+                    <button><img src="img/hide_menu.png" alt=""></button>
+                </div> <!-- end head -->
+                <div class="user-btn">
+                    <input type="button" value="로그인">
+                    <input type="button" value="회원가입">
+                </div> <!-- end user-btn -->
+                <div class="menu-list">
+                    <ul class="depth1">
+                        <li><a href="#">학원소개</a>
+                            <ul class="depth2">
+                                <li><a href="">학원소개</a></li>
+                                <li><a href="">수업시간표</a></li>
+                                <li><a href="">시험정보</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">온라인강의</a></li>
+                        <li><a href="#">온라인종합반</a></li>
+                        <li><a href="#">교수소개</a>
+                            <ul class="depth2">
+                                <li><a href="#">공인중개사</a></li>
+                                <li><a href="#">주택관리사</a></li>
+                                <li><a href="#">부동산경매</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">강의교재</a></li>
+                        <li><a href="#">커뮤니티</a>
+                            <ul class="depth2">
+                                <li><a href="#">합격수기</a></li>
+                                <li><a href="#">기출/모의고사</a></li>
+                                <li><a href="#">학습자료실</a></li>
+                                <li><a href="#">학습프로그램</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">고객센터</a>
+                            <ul class="depth2">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">온라인문의</a></li>
+                                <li><a href="#">자주묻는질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end inner-wrap -->
+        </div> <!-- end m-open-menu -->
+        <header>
+            <div class="container">
+                <div class="head-banner">
+                    <img src="img/head_banner.png" alt="">
+                </div>
+                <a class="logo" href="index.html"><img src="img/logo.png" alt=""></a>
+                <ul class="user-menu font-0">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li class="my-class"><a href="#">나의 강의실</a></li>
+                </ul> <!-- end user-menu -->
+                <button class="m-menu bg-img"></button>
+                <a class="sign-link bg-img" href="#"></a>
+            </div>
+        </header>
+        <nav>
+            <ul class="container">
+                <li><a href="#">학원소개</a></li>
+                <li><a href="#">온라인강의</a></li>
+                <li class="on"><a href="#">온라인종합반</a></li>
+                <li><a href="#">교수소개</a></li>
+                <li><a href="#">강의교재</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </nav>
+        <div id="m-sel-product">
+            <div class="wrap-select">
+                <div class="category">
+                    <select name="" id="">
+                        <option value="">공인중개사</option>
+                    </select>
+                </div> <!-- end category -->
+                <div class="inner-cate">
+                    <div class="s-box1 sel-cm">
+                        <select name="" id="">
+                            <option value="">-- 전체 --</option>
+                            <option value="">전과목 패키지</option>
+                            <option value="">정규강의</option>
+                            <option value="">추천특강</option>
+                        </select>
+                    </div> <!-- end s-box1 -->
+                    <div class="s-box2 sel-cm">
+                        <select name="" id="">
+                            <option value="">-- 전체 --</option>
+                            <option value="">평생 수강반</option>
+                            <option value="">2021 수강 연장반</option>
+                            <option value="">2021 수강반</option>
+                            <option value="">32회 1차 합격반</option>
+                            <option value="">32회 2차 합격반</option>
+                        </select>
+                        <select name="" id="" style="display: none;">
+                            <option value="">-- 전체 --</option>
+                            <option value="">기초 이론</option>
+                            <option value="">기본 이론</option>
+                            <option value="">심화 이론</option>
+                            <option value="">요약 과정</option>
+                            <option value="">핵심 요약</option>
+                        </select>
+                        <select name="" id="" style="display: none;">
+                            <option value="">-- 전체 --</option>
+                            <option value="">과목별 특강</option>
+                            <option value="">기출문제 특강</option>
+                            <option value="">동형모의고사 특강</option>
+                            <option value="">족집게 100선 특강</option>
+                            <option value="">핵심 요약</option>
+                        </select>
+                    </div> <!-- end s-box2 -->
+                </div> <!-- end inner-cate -->
+                <div class="add-cate">
+                    <select name="" id="">
+                        <option value="">-- 전체 --</option>
+                        <option value="">부동산 학개론</option>
+                        <option value="">민법 및 민사특별법</option>
+                        <option value="">부동산 공법</option>
+                        <option value="">중개사법 및 실무</option>
+                        <option value="">부동산공시법령</option>
+                        <option value="">부동산세법</option>
+                    </select>
+                </div> <!-- end add-cate -->
+            </div> <!-- end wrap-select -->
+        </div> <!-- end m-sel-product -->
+        <div id="enrolment" class="container font-0">
+            <aside class="left-menu">
+                <h1 class="tit-head">수강신청</h1>
+                <h2 class="depth1">공인중개사</h2>
+                <div class="slide-mu">
+                    <p class="menu-nm pk-mu">전과목 패키지</p>
+                    <ul class="depth3">
+                        <li><a href="#">평생 수강반</a></li>
+                        <li><a href="#">2021 수강 연장반</a></li>
+                        <li><a href="#">2021 수강반</a></li>
+                        <li><a href="#">32회 2차 합격반</a></li>
+                        <li><a href="#">32회 1차 합격반</a></li>
+                    </ul>
+                    <p class="menu-nm">정규강의</p>
+                    <ul class="depth3">
+                        <li><a href="#">기초 이론</a></li>
+                        <li><a href="#">기본 이론</a></li>
+                        <li><a href="#">심화 이론</a></li>
+                        <li><a href="#">요약 과정</a></li>
+                        <li><a href="#">핵심 요약</a></li>
+                    </ul>
+                    <p class="menu-nm">추천특강</p>
+                    <ul class="depth3">
+                        <li><a href="#">과목별 특강</a></li>
+                        <li><a href="#">기출문제 특강</a></li>
+                        <li><a href="#">동형모의고사 특강</a></li>
+                        <li><a href="#">족집게 100선 특강</a></li>
+                    </ul>
+                </div> <!-- end slide-mu -->
+            </aside> <!-- end left-menu -->
+
+            <section class="common-ct">
+                <div class="cate-dt-list">
+                    <p class="tit">과목</p>
+                    <ul>
+                        <li class="on"><a href="#">전체</a></li>
+                        <li><a href="#">부동산학개론</a></li>
+                        <li><a href="#">민법 및 민사특별법</a></li>
+                        <li><a href="#">부동산 공법</a></li>
+                        <li><a href="#">중개사법 및 실무</a></li>
+                        <li><a href="#">부동산 공시법령</a></li>
+                        <li><a href="#">부동산 세법</a></li>
+                    </ul>
+                </div> <!-- end cate-dt-list -->
+                <div class="lecture-list">
+                    <div class="class-box">
+                        <div class="cm-info head-info">
+                            <p>부동산학개론 <br>입문이론</p>
+                            <span>홍진선 교수</span>
+                        </div> <!-- end cm-info -->
+                        <div class="cm-info lecture-info">
+                            <p class="class-nm">제 32회 부동산 학개론 입문과정</p>
+                            <span class="book-nm">교재 : 2021 박문각 공인중개사 기초입문서 1/2차 세트(전 2권)</span>
+                            <ul>
+                                <li>수강일 : 30일</li>
+                                <li>강의 수 : 2강</li>
+                            </ul>
+                        </div>
+                        <div class="cm-info payment">
+                            <div class="class-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">강좌</label>
+                                </div>
+                                <div class="price">
+                                    <ul>
+                                        <li class="cost-pr">45,000 원</li>
+                                        <li class="sale-pr">27,000 원</li>
+                                    </ul>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                            <div class="textbook-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">교재</label>
+                                </div>
+                                <div class="price">
+                                    <p>31,500 원</p>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                        </div> <!-- end payment -->
+                    </div> <!-- end class-box -->
+                    <div class="class-box">
+                        <div class="cm-info head-info">
+                            <p>민법 및<br>민사특별법</p>
+                            <span>윤태석 교수</span>
+                        </div> <!-- end cm-info -->
+                        <div class="cm-info lecture-info">
+                            <p class="class-nm">제 32회 민법 입문과정</p>
+                            <span class="book-nm">교재 : 2021 박문각 공인중개사 기초입문서 1/2차 세트(전 2권)</span>
+                            <ul>
+                                <li>수강일 : 30일</li>
+                                <li>강의 수 : 2강</li>
+                            </ul>
+                        </div>
+                        <div class="cm-info payment">
+                            <div class="class-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">강좌</label>
+                                </div>
+                                <div class="price">
+                                    <ul>
+                                        <li class="cost-pr">45,000 원</li>
+                                        <li class="sale-pr">27,000 원</li>
+                                    </ul>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                            <div class="textbook-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">교재</label>
+                                </div>
+                                <div class="price">
+                                    <p>31,500 원</p>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                        </div> <!-- end payment -->
+                    </div> <!-- end class-box -->
+                    <div class="class-box">
+                        <div class="cm-info head-info">
+                            <p>부동산학개론 <br>입문이론</p>
+                            <span>홍진선 교수</span>
+                        </div> <!-- end cm-info -->
+                        <div class="cm-info lecture-info">
+                            <p class="class-nm">제 32회 부동산 학개론 입문과정</p>
+                            <span class="book-nm">교재 : 2021 박문각 공인중개사 기초입문서 1/2차 세트(전 2권)</span>
+                            <ul>
+                                <li>수강일 : 30일</li>
+                                <li>강의 수 : 2강</li>
+                            </ul>
+                        </div>
+                        <div class="cm-info payment">
+                            <div class="class-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">강좌</label>
+                                </div>
+                                <div class="price">
+                                    <ul>
+                                        <li class="cost-pr">45,000 원</li>
+                                        <li class="sale-pr">27,000 원</li>
+                                    </ul>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                            <div class="textbook-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">교재</label>
+                                </div>
+                                <div class="price">
+                                    <p>31,500 원</p>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                        </div> <!-- end payment -->
+                    </div> <!-- end class-box -->
+                    <div class="class-box">
+                        <div class="cm-info head-info">
+                            <p>부동산학개론 <br>입문이론</p>
+                            <span>홍진선 교수</span>
+                        </div> <!-- end cm-info -->
+                        <div class="cm-info lecture-info">
+                            <p class="class-nm">제 32회 부동산 학개론 입문과정</p>
+                            <span class="book-nm">교재 : 2021 박문각 공인중개사 기초입문서 1/2차 세트(전 2권)</span>
+                            <ul>
+                                <li>수강일 : 30일</li>
+                                <li>강의 수 : 2강</li>
+                            </ul>
+                        </div>
+                        <div class="cm-info payment">
+                            <div class="class-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">강좌</label>
+                                </div>
+                                <div class="price">
+                                    <ul>
+                                        <li class="cost-pr">45,000 원</li>
+                                        <li class="sale-pr">27,000 원</li>
+                                    </ul>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                            <div class="textbook-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">교재</label>
+                                </div>
+                                <div class="price">
+                                    <p>31,500 원</p>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                        </div> <!-- end payment -->
+                    </div> <!-- end class-box -->
+                    <div class="class-box">
+                        <div class="cm-info head-info">
+                            <p>부동산학개론 <br>입문이론</p>
+                            <span>홍진선 교수</span>
+                        </div> <!-- end cm-info -->
+                        <div class="cm-info lecture-info">
+                            <p class="class-nm">제 32회 부동산 학개론 입문과정</p>
+                            <span class="book-nm">교재 : 2021 박문각 공인중개사 기초입문서 1/2차 세트(전 2권)</span>
+                            <ul>
+                                <li>수강일 : 30일</li>
+                                <li>강의 수 : 2강</li>
+                            </ul>
+                        </div>
+                        <div class="cm-info payment">
+                            <div class="class-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">강좌</label>
+                                </div>
+                                <div class="price">
+                                    <ul>
+                                        <li class="cost-pr">45,000 원</li>
+                                        <li class="sale-pr">27,000 원</li>
+                                    </ul>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                            <div class="textbook-pay cm-pay">
+                                <div class="check">
+                                    <input type="checkbox" name="" id=""><label for="">교재</label>
+                                </div>
+                                <div class="price">
+                                    <p>31,500 원</p>
+                                </div> <!-- end price-->
+                            </div> <!-- end class-pay -->
+                        </div> <!-- end payment -->
+                    </div> <!-- end class-box -->
+                </div> <!-- end lecture-list -->
+                <div class="btn-group">
+                    <input type="button" value="장바구니 담기">
+                    <input type="button" value="수강신청">
+                </div> <!-- end btn-group -->
+            </section> <!-- end enrolment -->
+        </div> <!-- end enrolment -->
+        
+        <footer>
+            <div class="head">
+                <div class="container">
+                    <ul class="f-nav">
+                        <li><a href="#">학원소개</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div> <!-- end head -->
+            <div class="container">
+                <p class="f-info">LAND79 대표이사: 황민희 <span class="bar">|</span>전화 : 02-867-8118 <span class="bar">|</span>
+                    팩스
+                    : 02-867-8117<span class="bar">|</span>사업자등록번호 : 401-81-58970<span class="bar">|</span>주소: 경기도 하남시
+                    덕풍동로
+                    111-33-007호<span class="bar">|</span>강서공인중개사학원 대표이사 : 윤호상<span class="bar">|</span>전화 :
+                    02-2690-8383<span class="bar">|</span>팩스 : 02-2690-8339<span class="bar">|</span>사업자등록번호 :
+                    375-81-00301
+                </p>
+                <span class="copyright">COPYRIGHT &copy; 2020 LAND79 ALL RIGHTS RESEVED.</span>
+            </div>
+        </footer>
+    </div> <!-- end wrap -->
+</body>
+
+</html>

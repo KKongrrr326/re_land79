@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:: Land79 ::</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- 외부 CSS -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 외부 js -->
+    <script src="js/main.js"></script>
+    <script>
+
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+        jQuery(document).ready(function ($) {
+
+            $(".review-area table .list-area").on("click", function () {
+                $(this).next().children().toggleClass("show");
+            });
+
+            $(".dt-form .tab-ct-area .tab-box li").on("click", function () {
+
+                var select_tab_box = $(this).index();
+                $(".dt-form .tab-ct-area .tab-box li").removeClass("on");
+                $(".dt-form .tab-ct-area .tab-box li:eq(" + select_tab_box + ")").addClass("on")
+
+                $(".dt-form .tab-ct-area .artice").removeClass("show");
+                $(".dt-form .tab-ct-area .artice:eq(" + select_tab_box + ")").addClass("show")
+            });
+
+
+            // PC
+            if (!isMobile) {
+
+                $(function () {
+                    $("aside .depth1").click(function () {
+                        $(this).toggleClass("border")
+                        $("aside .slide-mu").toggleClass("on");
+                    });
+                    $("aside .menu-nm").click(function () {
+                        $(this).next().slideToggle(300);
+                    });
+                });
+
+            }
+        });
+        jQuery(document).ready(function ($) {
+            // Mobile
+            if (isMobile) {
+
+                $(function () {
+
+                    $("header .m-menu").on("click", function () {
+                        $("#m-open-menu").show();
+                    });
+                    $("#m-open-menu .head button").on("click", function () {
+                        $("#m-open-menu").hide();
+                    });
+
+                    $("#m-open-menu .menu-list .depth1>li>a").on("click", function () {
+
+                        $(this).next().slideToggle(300);
+                        $(this).toggleClass("on");
+                    });
+
+                });
+
+                // header : fixed 
+                var fixed_head = 55;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_head <= window) {
+                        $("header").addClass("fixed");
+                    } else {
+                        $("header").removeClass("fixed");
+                    }
+                });
+                var fixed_navi = 102;
+                $(window).scroll(function () {
+                    var window = $(this).scrollTop();
+                    if (fixed_navi <= window) {
+                        $("nav").addClass("fixed");
+                    } else {
+                        $("nav").removeClass("fixed");
+                    }
+                });
+
+                $("#product-detail .m-review-list .simple-review").on("click", function () {
+
+                    $(this).children().next().children().toggleClass("slide")
+                    $(this).next().toggleClass("show");
+
+                });
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="m-open-menu">
+            <div class="inner-wrap">
+                <div class="head">
+                    <a class="logo" href="index.html"><img src="img/open_menu_logo.png" alt=""></a>
+                    <button><img src="img/hide_menu.png" alt=""></button>
+                </div> <!-- end head -->
+                <div class="user-btn">
+                    <input type="button" value="로그인">
+                    <input type="button" value="회원가입">
+                </div> <!-- end user-btn -->
+                <div class="menu-list">
+                    <ul class="depth1">
+                        <li><a href="#">학원소개</a>
+                            <ul class="depth2">
+                                <li><a href="">학원소개</a></li>
+                                <li><a href="">수업시간표</a></li>
+                                <li><a href="">시험정보</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">온라인강의</a></li>
+                        <li><a href="#">온라인종합반</a></li>
+                        <li><a href="#">교수소개</a>
+                            <ul class="depth2">
+                                <li><a href="#">공인중개사</a></li>
+                                <li><a href="#">주택관리사</a></li>
+                                <li><a href="#">부동산경매</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">강의교재</a></li>
+                        <li><a href="#">커뮤니티</a>
+                            <ul class="depth2">
+                                <li><a href="#">합격수기</a></li>
+                                <li><a href="#">기출/모의고사</a></li>
+                                <li><a href="#">학습자료실</a></li>
+                                <li><a href="#">학습프로그램</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">고객센터</a>
+                            <ul class="depth2">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">온라인문의</a></li>
+                                <li><a href="#">자주묻는질문</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end inner-wrap -->
+        </div> <!-- end m-open-menu -->
+        <header>
+            <div class="container">
+                <div class="head-banner">
+                    <img src="img/head_banner.png" alt="">
+                </div>
+                <a class="logo" href="index.html"><img src="img/logo.png" alt=""></a>
+                <ul class="user-menu font-0">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li class="my-class"><a href="#">나의 강의실</a></li>
+                </ul> <!-- end user-menu -->
+                <button class="m-menu bg-img"></button>
+                <a class="sign-link bg-img" href="#"></a>
+            </div>
+        </header>
+        <nav>
+            <ul class="container">
+                <li><a href="#">학원소개</a></li>
+                <li><a href="#">온라인강의</a></li>
+                <li class="on"><a href="#">온라인종합반</a></li>
+                <li><a href="#">교수소개</a></li>
+                <li><a href="#">강의교재</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </nav>
+
+        <div id="product-detail" class="container font-0">
+            <aside class="left-menu">
+                <h1 class="tit-head">수강신청</h1>
+                <h2 class="depth1">공인중개사</h2>
+                <div class="slide-mu">
+                    <p class="menu-nm pk-mu">전과목 패키지</p>
+                    <ul class="depth3">
+                        <li><a href="#">평생 수강반</a></li>
+                        <li><a href="#">2021 수강 연장반</a></li>
+                        <li><a href="#">2021 수강반</a></li>
+                        <li><a href="#">32회 2차 합격반</a></li>
+                        <li><a href="#">32회 1차 합격반</a></li>
+                    </ul>
+                    <p class="menu-nm">정규강의</p>
+                    <ul class="depth3">
+                        <li><a href="#">기초 이론</a></li>
+                        <li><a href="#">기본 이론</a></li>
+                        <li><a href="#">심화 이론</a></li>
+                        <li><a href="#">요약 과정</a></li>
+                        <li><a href="#">핵심 요약</a></li>
+                    </ul>
+                    <p class="menu-nm">추천특강</p>
+                    <ul class="depth3">
+                        <li><a href="#">과목별 특강</a></li>
+                        <li><a href="#">기출문제 특강</a></li>
+                        <li><a href="#">동형모의고사 특강</a></li>
+                        <li><a href="#">족집게 100선 특강</a></li>
+                    </ul>
+                </div> <!-- end slide-mu -->
+            </aside> <!-- end left-menu -->
+
+            <section class="dt-form common-ct">
+
+                <div class="detail-visual">
+                    <div class="t-class-info">
+                        <div class="t-img-box">
+                            <img src="img/product_detail_thum.png" alt="">
+                        </div> <!-- end t-img-box-->
+                        <div class="class-info">
+                            <div class="info-list">
+                                <h3>[온라인 강의] 제 31회 공인중개사 민법 조문 특강</h3>
+                                <ul>
+                                    <li><span>강의구성 : 4강</span><span>수강기간 : 60일</span></li>
+                                    <li>촬영일시 : 2019-11-11</li>
+                                    <li>전화상담 : 031-204-8869</li>
+                                    <li>강사 : 윤태석</li>
+                                </ul>
+                            </div> <!-- end info-list -->
+                            <div class="b-pay-area">
+                                <div class="sel-box">
+                                    <input type="checkbox" name="" id="">
+                                    <ul>
+                                        <li class="font-bold">[메인교재] </li>
+                                        <li class="book-name">책 이름 나오는 구간</li>
+                                        <li class="bar">|</li>
+                                        <li class="book-publisher">출판사명</li>
+                                        <li class="bar">|</li>
+                                        <li class="book-price">14,000 원</li>
+                                    </ul>
+                                </div> <!-- end sel-box -->
+                                <div class="sel-box">
+                                    <input type="checkbox" name="" id="">
+                                    <ul>
+                                        <li class="font-bold">[메인교재] </li>
+                                        <li class="book-name">책 이름 나오는 구간</li>
+                                        <li class="bar">|</li>
+                                        <li class="book-publisher">출판사명</li>
+                                        <li class="bar">|</li>
+                                        <li class="book-price">14,000 원</li>
+                                    </ul>
+                                </div> <!-- end sel-box -->
+                            </div> <!-- end b-pay-area -->
+                            <div class="btn-group align-right">
+                                <input type="button" value="장바구니 담기">
+                                <input type="button" value="수강신청">
+                            </div> <!-- end btn-group -->
+                        </div> <!-- end class-info -->
+                    </div> <!-- t-class-info -->
+                </div> <!-- end detail-visual  -->
+                <div class="tab-ct-area">
+                    <div class="tab-box">
+                        <ul>
+                            <li class="on">강의정보</li>
+                            <li>강의목차</li>
+                            <li>강사소개</li>
+                            <li>교재정보</li>
+                            <li>수강후기(0)</li>
+                        </ul>
+                    </div> <!-- end tab-box -->
+                    <div class="artice class-info show">
+                        <p class="section-title">강의정보</p>
+                        <div class="font-0">
+                            <ul>
+                                <li><span class="left-txt">강의 과목</span><span class="right-txt">민법</span></li>
+                                <li><span class="left-txt">강좌유형</span><span class="right-txt">온라인 강의</span></li>
+                                <li><span class="left-txt">학습 단계</span><span class="right-txt">특별강의</span></li>
+                                <li><span class="left-txt">자료</span><span class="right-txt">교재별매</span></li>
+                            </ul>
+                            <ul>
+                                <li><span class="left-txt">강사</span><span class="right-txt">유태석</span></li>
+                                <li><span class="left-txt">수강시간</span><span class="right-txt">40일</span></li>
+                                <li><span class="left-txt">강좌구성</span><span class="right-txt">4강</span></li>
+                                <li><span class="left-txt">수업료</span><span class="right-txt">90,000</span></li>
+                            </ul>
+                        </div>
+                    </div> <!-- end class-info -->
+                    <div class="artice class-content">
+                        <p class="section-title">강의 목차</p>
+                        <table style="table-layout: fixed;">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="50%">
+                                <col width="25%">
+                            </colgroup>
+                            <tr>
+                                <th>강의번호</th>
+                                <th>학습내용</th>
+                                <th>시간</th>
+                            </tr>
+                            <tr>
+                                <td>1강</td>
+                                <td>20200318-1(p2-4. 총칙, 의사표시)</td>
+                                <td>65분</td>
+                            </tr>
+                            <tr>
+                                <td>1강</td>
+                                <td>20200318-1(p2-4. 총칙, 의사표시)</td>
+                                <td>65분</td>
+                            </tr>
+                            <tr>
+                                <td>1강</td>
+                                <td>20200318-1(p2-4. 총칙, 의사표시)</td>
+                                <td>65분</td>
+                            </tr>
+                            <tr>
+                                <td>1강</td>
+                                <td>20200318-1(p2-4. 총칙, 의사표시)</td>
+                                <td>65분</td>
+                            </tr>
+                        </table>
+                    </div> <!-- end class-content -->
+                    <div class="artice t-intro">
+                        <p class="section-title">강사소개</p>
+                        <div class="font-0">
+                            <div class="t-img align-center">
+                                <img src="img/t_img(1).png" alt="">
+                            </div>
+                            <div class="intro-txt">
+                                <h3>민법 윤태석 변호사</h3>
+                                <ul>
+                                    <li class="font-bold">■ 담당과목</li>
+                                    <li class="font-bold">민법 및 민사특별법</li>
+                                </ul>
+                                <ul>
+                                    <li class="font-bold">■ 프로필</li>
+                                    <li>성균관대 법대 졸업</li>
+                                    <li>제 40회 사법시험 합격 (1998년)</li>
+                                    <li>제 30기 사법연수원 수료 (2001년)</li>
+                                    <li>조달청 사내 변호사 (2001년 - 2014년)</li>
+                                    <li>법무법인(유) 동인 변호사 (2015년 - 2017년)</li>
+                                    <li>조달교육원 민법 전임교수 (2005년 - 2014년)</li>
+                                    <li>배재대학교 민법 전임교수 (2011년 - 2016년)</li>
+                                    <li class="font-bold">현 ) 박문각 등 공인중개사학원 민법 전임강사</li>
+                                    <li>성균관대 법대 졸업</li>
+                                    <li>성균관대 법대 졸업</li>
+                                    <li>성균관대 법대 졸업</li>
+                                    <li>성균관대 법대 졸업</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- end t-intro -->
+                    <div class="artice txtbook-info">
+                        <p class="section-title">교재정보</p>
+                        <div class="font-0 book-wrap">
+                            <div class="b-img">
+                                <img src="img/detail_form_txtbook_001.png" alt="">
+                            </div> <!-- end b-img -->
+                            <div class="txt-info">
+                                <ul>
+                                    <li>■ 저자</li>
+                                    <li>수원영통박문각학원 교수진</li>
+                                </ul>
+                                <ul>
+                                    <li>■ 출판사</li>
+                                    <li>박문각</li>
+                                </ul>
+                                <ul>
+                                    <li>■ 가격</li>
+                                    <li>14,000원</li>
+                                </ul>
+                                <ul>
+                                    <li>■ 교재 사용 강의</li>
+                                    <li>제 31회 공인중개사 민법 조문 특강</li>
+                                </ul>
+
+                            </div> <!-- end txt-info -->
+                        </div> <!-- end book-wrap -->
+                    </div> <!-- end txt-book -->
+                    <div class="artice review">
+                        <p class="section-title">수강후기(99)</p>
+                        <input class="font-or" type="button" value="수강후기 작성하기"
+                            onclick="location.href ='mypage-class-write.html'">
+                        <div class="review-area clear">
+                            <table style="table-layout: fixed">
+                                <colgroup>
+                                    <col width="45%">
+                                    <col width="20%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                </colgroup>
+                                <tr>
+                                    <th>글제목</th>
+                                    <th>별점</th>
+                                    <th>작성자</th>
+                                    <th>등록일</th>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="txt-title">글제목이 보이는 곳입니다. 글자수를 제한하여 일정이상일 경우 보이지 않게 해주세요. 글자를 더
+                                        작성해보겠습니다.
+                                    </td>
+                                    <td><img src="img/star-score5.png" alt=""></td>
+                                    <td>홍길동</td>
+                                    <td>2020-03-26</td>
+                                </tr>
+                                <tr>
+                                    <td class="slide-review" colspan="4">
+                                        <div class="review-box">
+                                            <p class="all-title"><span class="font-bold">글제목</span><span>글제목이
+                                                    보이는
+                                                    곳입니다.</span></p>
+                                            <ul class="font-0">
+                                                <li><span class="font-bold">작성자</span><span
+                                                        class="writer-name">홍길동</span>
+                                                </li>
+                                                <li><span class="font-bold">등록일</span><span>2020-03-26</span>
+                                                </li>
+                                            </ul>
+                                            <div class="writer-memo">
+                                                <p>안녕하세요 윤태석 선생님의 강의 수강생입니다.</p>
+                                                <p>강의를 듣고 공부하면 훨씬 이해가 잘 되고 중요 부분의 포인트를 잘 잡아 설명해주니</p>
+                                                <p>골치 아팠던 민법이 이제는 너무 수월해 양알ㄹ얄ㄹ아알라 뇰로욜로 하네요.</p>
+                                            </div>
+                                        </div> <!-- end review-box -->
+                                    </td>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="txt-title">글제목이 보이는 곳입니다. 글자수를 제한하여 일정이상일 경우 보이지 않게 해주세요. 글자를 더
+                                        작성해보겠습니다.
+                                    </td>
+                                    <td><img src="img/star-score5.png" alt=""></td>
+                                    <td>홍길동</td>
+                                    <td>2020-03-26</td>
+                                </tr>
+                                <tr>
+                                    <td class="slide-review" colspan="4">
+                                        <div class="review-box">
+                                            <p class="all-title">
+                                                <span class="font-bold">글제목</span><span>민법이 이젠 제일 자신있어요</span>
+                                            </p>
+                                            <ul class="font-0">
+                                                <li><span class="font-bold">작성자</span><span
+                                                        class="writer-name">홍길동</span>
+                                                </li>
+                                                <li><span class="font-bold">등록일</span><span>2020-03-26</span>
+                                                </li>
+                                            </ul>
+                                            <div class="writer-memo">
+                                                <p>안녕하세요 윤태석 선생님의 강의 수강생입니다.</p>
+                                                <p>강의를 듣고 공부하면 훨씬 이해가 잘 되고 중요 부분의 포인트를 잘 잡아 설명해주니</p>
+                                                <p>골치 아팠던 민법이 이제는 너무 수월해 양알ㄹ얄ㄹ아알라 뇰로욜로 하네요.</p>
+                                            </div>
+                                        </div> <!-- end review-box -->
+                                    </td>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="txt-title">글제목이 보이는 곳입니다. 글자수를 제한하여 일정이상일 경우 보이지 않게 해주세요. 글자를 더
+                                        작성해보겠습니다.
+                                    </td>
+                                    <td><img src="img/star-score5.png" alt=""></td>
+                                    <td>홍길동</td>
+                                    <td>2020-03-26</td>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="slide-review" colspan="4">
+                                        <div class="review-box">
+                                            <p class="all-title">
+                                                <span class="font-bold">글제목</span><span>민법이 이젠 제일 자신있어요</span>
+                                            </p>
+                                            <ul class="font-0">
+                                                <li><span class="font-bold">작성자</span><span
+                                                        class="writer-name">홍길동</span>
+                                                </li>
+                                                <li><span class="font-bold">등록일</span><span>2020-03-26</span>
+                                                </li>
+                                            </ul>
+                                            <div class="writer-memo">
+                                                <p>안녕하세요 윤태석 선생님의 강의 수강생입니다.</p>
+                                                <p>강의를 듣고 공부하면 훨씬 이해가 잘 되고 중요 부분의 포인트를 잘 잡아 설명해주니</p>
+                                                <p>골치 아팠던 민법이 이제는 너무 수월해 양알ㄹ얄ㄹ아알라 뇰로욜로 하네요.</p>
+                                            </div>
+                                        </div> <!-- end review-box -->
+                                    </td>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="txt-title">글제목이 보이는 곳입니다. 글자수를 제한하여 일정이상일 경우 보이지 않게 해주세요. 글자를 더
+                                        작성해보겠습니다.
+                                    </td>
+                                    <td><img src="img/star-score5.png" alt=""></td>
+                                    <td>홍길동</td>
+                                    <td>2020-03-26</td>
+                                </tr>
+                                <tr>
+                                    <td class="slide-review" colspan="4">
+                                        <div class="review-box">
+                                            <p class="all-title">
+                                                <span class="font-bold">글제목</span><span>민법이 이젠 제일 자신있어요</span>
+                                            </p>
+                                            <ul class="font-0">
+                                                <li><span class="font-bold">작성자</span><span
+                                                        class="writer-name">홍길동</span>
+                                                </li>
+                                                <li><span class="font-bold">등록일</span><span>2020-03-26</span>
+                                                </li>
+                                            </ul>
+                                            <div class="writer-memo">
+                                                <p>안녕하세요 윤태석 선생님의 강의 수강생입니다.</p>
+                                                <p>강의를 듣고 공부하면 훨씬 이해가 잘 되고 중요 부분의 포인트를 잘 잡아 설명해주니</p>
+                                                <p>골치 아팠던 민법이 이제는 너무 수월해 양알ㄹ얄ㄹ아알라 뇰로욜로 하네요.</p>
+                                            </div>
+                                        </div> <!-- end review-box -->
+                                    </td>
+                                </tr>
+                                <tr class="list-area">
+                                    <td class="txt-title">글제목이 보이는 곳입니다. 글자수를 제한하여 일정이상일 경우 보이지 않게 해주세요. 글자를 더
+                                        작성해보겠습니다.
+                                    </td>
+                                    <td><img src="img/star-score5.png" alt=""></td>
+                                    <td>홍길동</td>
+                                    <td>2020-03-26</td>
+                                </tr>
+                                <tr>
+                                    <td class="slide-review" colspan="4">
+                                        <div class="review-box">
+                                            <p class="all-title">
+                                                <span class="font-bold">글제목</span><span>민법이 이젠 제일 자신있어요</span>
+                                            </p>
+                                            <ul class="font-0">
+                                                <li><span class="font-bold">작성자</span><span
+                                                        class="writer-name">홍길동</span>
+                                                </li>
+                                                <li><span class="font-bold">등록일</span><span>2020-03-26</span>
+                                                </li>
+                                            </ul>
+                                            <div class="writer-memo">
+                                                <p>안녕하세요 윤태석 선생님의 강의 수강생입니다.</p>
+                                                <p>강의를 듣고 공부하면 훨씬 이해가 잘 되고 중요 부분의 포인트를 잘 잡아 설명해주니</p>
+                                                <p>골치 아팠던 민법이 이제는 너무 수월해 양알ㄹ얄ㄹ아알라 뇰로욜로 하네요.</p>
+                                            </div>
+                                        </div> <!-- end review-box -->
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="m-review-list">
+                                <div class="review-box">
+                                    <div class="simple-review font-0">
+                                        <div class="review-info">
+                                            <p class="list-title">민법이 이제 제일 자신 있어요</p>
+                                            <ul>
+                                                <li class="write-name">홍길동</li>
+                                                <li class="bar">|</li>
+                                                <li class="write-date">2020-03-26</li>
+                                            </ul>
+                                        </div>
+                                        <div class="review-btn-area">
+                                            <a class="slide-btn bg-img" href="#"></a>
+                                        </div>
+                                    </div> <!-- end simple-review -->
+                                    <div class="all-review">
+                                        <a class="star-score bg-img" href="#"></a>
+                                        <div class="user-review">
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                        </div>
+                                    </div> <!-- end all-review -->
+                                </div> <!-- end review-box -->
+                                <div class="review-box">
+                                    <div class="simple-review font-0">
+                                        <div class="review-info">
+                                            <p class="list-title">민법이 이제 제일 자신 있어요</p>
+                                            <ul>
+                                                <li class="write-name">홍길동</li>
+                                                <li class="bar">|</li>
+                                                <li class="write-date">2020-03-26</li>
+                                            </ul>
+                                        </div>
+                                        <div class="review-btn-area">
+                                            <a class="slide-btn bg-img" href="#"></a>
+                                        </div>
+                                    </div> <!-- end simple-review -->
+                                    <div class="all-review">
+                                        <a class="star-score bg-img" href="#"></a>
+                                        <div class="user-review">
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                        </div>
+                                    </div> <!-- end all-review -->
+                                </div> <!-- end review-box -->
+                                <div class="review-box">
+                                    <div class="simple-review font-0">
+                                        <div class="review-info">
+                                            <p class="list-title">민법이 이제 제일 자신 있어요</p>
+                                            <ul>
+                                                <li class="write-name">홍길동</li>
+                                                <li class="bar">|</li>
+                                                <li class="write-date">2020-03-26</li>
+                                            </ul>
+                                        </div>
+                                        <div class="review-btn-area">
+                                            <a class="slide-btn bg-img" href="#"></a>
+                                        </div>
+                                    </div> <!-- end simple-review -->
+                                    <div class="all-review">
+                                        <a class="star-score bg-img" href="#"></a>
+                                        <div class="user-review">
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                        </div>
+                                    </div> <!-- end all-review -->
+                                </div> <!-- end review-box -->
+                                <div class="review-box">
+                                    <div class="simple-review font-0">
+                                        <div class="review-info">
+                                            <p class="list-title">민법이 이제 제일 자신 있어요</p>
+                                            <ul>
+                                                <li class="write-name">홍길동</li>
+                                                <li class="bar">|</li>
+                                                <li class="write-date">2020-03-26</li>
+                                            </ul>
+                                        </div>
+                                        <div class="review-btn-area">
+                                            <a class="slide-btn bg-img" href="#"></a>
+                                        </div>
+                                    </div> <!-- end simple-review -->
+                                    <div class="all-review">
+                                        <a class="star-score bg-img" href="#"></a>
+                                        <div class="user-review">
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                        </div>
+                                    </div> <!-- end all-review -->
+                                </div> <!-- end review-box -->
+                                <div class="review-box">
+                                    <div class="simple-review font-0">
+                                        <div class="review-info">
+                                            <p class="list-title">민법이 이제 제일 자신 있어요</p>
+                                            <ul>
+                                                <li class="write-name">홍길동</li>
+                                                <li class="bar">|</li>
+                                                <li class="write-date">2020-03-26</li>
+                                            </ul>
+                                        </div>
+                                        <div class="review-btn-area">
+                                            <a class="slide-btn bg-img" href="#"></a>
+                                        </div>
+                                    </div> <!-- end simple-review -->
+                                    <div class="all-review">
+                                        <a class="star-score bg-img" href="#"></a>
+                                        <div class="user-review">
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                            <p>어쩌구 저쩌구 넘 따봉드립니다.</p>
+                                        </div>
+                                    </div> <!-- end all-review -->
+                                </div> <!-- end review-box -->
+                            </div> <!-- end m-review-list -->
+                            <div class="more-btn align-center">
+                                <a href="#">더보기<div class="arrow-down bg-img"></div></a>
+                            </div>
+                        </div> <!-- end review area -->
+                    </div> <!-- end review -->
+                </div> <!-- end tab-ct-area -->
+            </section> <!-- end common-ct -->
+        </div> <!-- end enrolment -->
+
+        <footer>
+            <div class="head">
+                <div class="container">
+                    <ul class="f-nav">
+                        <li><a href="#">학원소개</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">이용약관</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li class="bar">|</li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+            </div> <!-- end head -->
+            <div class="container">
+                <p class="f-info">LAND79 대표이사: 황민희 <span class="bar">|</span>전화 : 02-867-8118 <span class="bar">|</span>
+                    팩스
+                    : 02-867-8117<span class="bar">|</span>사업자등록번호 : 401-81-58970<span class="bar">|</span>주소: 경기도 하남시
+                    덕풍동로
+                    111-33-007호<span class="bar">|</span>강서공인중개사학원 대표이사 : 윤호상<span class="bar">|</span>전화 :
+                    02-2690-8383<span class="bar">|</span>팩스 : 02-2690-8339<span class="bar">|</span>사업자등록번호 :
+                    375-81-00301
+                </p>
+                <span class="copyright">COPYRIGHT &copy; 2020 LAND79 ALL RIGHTS RESEVED.</span>
+            </div>
+        </footer>
+    </div> <!-- end wrap -->
+</body>
+
+</html>

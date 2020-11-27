@@ -1,0 +1,120 @@
+/* layout.css */
+
+/* header */
+#m-open-menu {
+    display: none;
+}
+#m-sel-product {
+    display: none;
+}
+header {
+    height: 100px;
+    border-bottom: 1px solid #ddd;
+}
+header.fixed {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 98;
+    background: #fff;
+}
+header .container {
+    position: relative;
+    height: 100%;
+}
+header .head-banner {
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    width: 250px; height: 75px;
+    font-size: 0;
+}
+header .head-banner img {
+    height: 100%;
+}
+header .logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+header .user-menu {
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+}
+header .user-menu li {
+    display: inline-block;
+    margin-left: 30px;
+}
+header .user-menu li a {
+    font-size: 14px;
+    font-weight: 500;
+}
+header .user-menu .my-class a{
+    background: #3887f9;
+    padding: 10px 25px;
+    color: #fff;
+}
+nav {
+    border-bottom: 1px solid #ddd;
+}
+nav.fixed {
+    position: fixed;
+    top: 100px; left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 98;
+    box-shadow: 4px 4px 4px rgba(51,51,51,.2);
+}
+nav .container {
+    display: flex;
+    text-align: center;
+}
+nav li {
+    flex: 1;
+    font-size: 16px;
+    padding: 20px 0;
+}
+
+/* footer */
+footer {
+    padding-bottom: 30px;
+}
+footer .head {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 10px 0;
+}
+footer .head ul {
+    font-size: 0;
+}
+footer .head ul li {
+    display: inline-block;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+footer .head ul li a {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+footer .head ul .bar {
+    margin: 0 7px;
+}
+footer .f-info {
+    padding: 20px 0;
+    font-size: 13px;
+    color: #4b4b4b;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+footer .f-info span {
+    margin: 0 5px;
+}
+footer .copyright {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b4b4b;
+}
